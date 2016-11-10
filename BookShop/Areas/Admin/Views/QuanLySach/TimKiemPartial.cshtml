@@ -1,0 +1,23 @@
+﻿@using Model.EF;
+@model List<Sach>
+
+                        @foreach (var item in Model)
+                        { 
+                            <tr class="odd gradeX">
+                                <td>@item.MaSach</td>
+                                <td> @item.TenSach</td>
+                                <td class="center">@item.ChuDe.TenChuDe</td>
+                                <td class="center">@item.NhaXuatBan.TenNXB</td>
+                                <td class="center">@String.Format("{0:0,0}", item.GiaBan) VNĐ</td>
+                                <td><img src="@Url.Content("~/Image/"+item.AnhBia)" alt="@item.AnhBia" width="100" height="100" /></td>
+                                <td class="center">@item.SoLanXem</td>
+                                <td class="center">@item.SoLuongTon</td>
+                                <td>
+                                    <input type="button" class="btn btn-outline btn-primary" value="Chi tiết" onclick="location.href='@Url.Action("ChitietSach", "QuanLySach", new {@id=item.MaSach })'" />
+                                    <input type="button" class="btn btn-outline btn-primary" value="Sửa" onclick="location.href='@Url.Action("Suasach", "QuanLySach", new { @masach = item.MaSach })'" />
+                                </td>
+                            </tr>
+                        }
+
+                   
+

@@ -1,0 +1,84 @@
+﻿@using Model.EF
+@model List<Sach>
+@{
+    ViewBag.Title = "SachNXB";
+    Layout = "~/Views/Shared/_ClientView.cshtml";
+}
+<div class="col-md-3" style="margin-top:50px;height:80%">
+    @Html.Action("NXBPartial", "HomeClient")
+</div>
+
+<div class="single-product-area">
+    <div class="container">
+        <div class="row">
+           @{int i = 0;}
+@foreach(var item in Model)
+                {
+                    i++;
+            <div class="col-md-3 col-sm-6">
+                 
+                <div class="single-product" style="margin-bottom:10px">
+
+
+                    <div class="product-f-image">
+                        <img src="@Url.Content("~/Image/"+item.AnhBia)" alt="">
+                        <div class="product-hover">
+                            <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+                            <a href="#" class="view-details-link"><i class="fa fa-link"></i> Xem chi tiết</a>
+                        </div>
+                    </div>
+
+                    @if (item.TenSach.Length > 20)
+                    {
+                        string s = @item.TenSach.Substring(0, 20).ToString() + "...";
+                        <h2><a href="#">@s</a></h2>
+                    }
+                    else
+                    {
+                        <h2><a href="#"> @item.TenSach</a></h2>
+
+                    }
+
+                    <div class="product-carousel-price">
+                        Giá: <ins>@String.Format("{0:0,0}", item.GiaBan) VNĐ</ins>
+                    </div>
+
+                </div>
+                
+            </div>
+                    if (i % 3 == 0)
+                    {
+                        <div style="clear:both"></div>
+                    }
+                }
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-pagination text-center">
+                    <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

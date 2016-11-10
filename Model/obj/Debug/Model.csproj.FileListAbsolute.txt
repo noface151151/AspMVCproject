@@ -1,0 +1,7 @@
+E:\visual 2013\BookShop\Model\bin\Debug\Model.dll.config
+E:\visual 2013\BookShop\Model\bin\Debug\Model.dll
+E:\visual 2013\BookShop\Model\bin\Debug\Model.pdb
+E:\visual 2013\BookShop\Model\bin\Debug\EntityFramework.dll
+E:\visual 2013\BookShop\Model\bin\Debug\EntityFramework.xml
+E:\visual 2013\BookShop\Model\obj\Debug\Model.dll
+E:\visual 2013\BookShop\Model\obj\Debug\Model.pdb

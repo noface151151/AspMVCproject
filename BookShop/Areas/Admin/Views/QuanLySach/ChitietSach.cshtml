@@ -1,0 +1,39 @@
+﻿@model Model.EF.Sach
+
+@{
+    ViewBag.Title = "ChitietSach";
+    Layout = "~/Areas/Admin/Views/Shared/AdminView.cshtml";
+}
+
+@section header{
+    Chi tiết sản phẩm
+    }
+
+
+    <div style="float:left;margin-right:20px;" >
+        <img src="@Url.Content("~/Image/"+ Model.AnhBia)" width="300" height="350" alt="Image" />
+    </div>
+<div id="thongtin">
+    <div id="Masach"><b>Mã sách:</b> @Model.MaSach</div>
+    <div id="Tensach"><b>Tên sách:</b> @Model.TenSach</div>
+    <div id="Chude"><b>Chủ đề:</b> @Model.ChuDe.TenChuDe</div>
+    <div id="NhaXuatBan"><b>Nhà xuất bản:</b> @Model.NhaXuatBan.TenNXB</div>
+    <div id="TenTacGia"><b>Tác giả:</b> @Model.TenTacGia</div>
+    <div id="Giaban"><b>Giá bán:</b> @String.Format("{0:0,0}", Model.GiaBan) VNĐ</div>
+    <div id="NgayKhoiTao"><b>Ngày tạo:</b></div>
+    <div id="NgayCapNhat"><b>Ngày chỉnh sửa:</b> @Model.NgayCapNhat.Value.ToShortDateString()</div>
+    <div id="SoLuongTon"><b>Số lượng tồn:</b> @Model.SoLuongTon</div>
+    <div id="SoLanXem"><b>Số lượt xem:</b> @Model.SoLanXem</div>
+    <div id="MoTa"><b>Thông tin:</b> @Html.Raw(Model.MoTa)</div>
+</div>
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<style>
+    #thongtin div {
+        margin-bottom:5px;
+    }
+</style>

@@ -1,0 +1,25 @@
+﻿
+@using Model.EF
+@model List<ChuDe>
+@*    <ul id="submenu" class="nav navbar-nav">
+        @foreach (var item in Model)
+        {
+            <li style="list-style:none">
+                @Html.ActionLink(item.TenNXB, "SachNXB", "NhaXuatBan", new { @manxb = item.MaNXB }, null)
+            </li>
+        }
+
+    </ul>*@
+<ul class="nav in">
+    @foreach (var item in Model)
+    {
+        <li>
+            @Html.ActionLink(item.TenChuDe, "Sachtheloai", "TheLoai", new { @matheloai = item.MaChuDe }, new { @id = "tenNXB" })
+        </li>
+    }
+</ul>
+<style>
+    #tenNXB:hover {
+        background-color: #ffd800;
+    }
+</style>

@@ -1,0 +1,68 @@
+﻿@using Model.EF
+@model Sach
+@{
+    ViewBag.Title = "ChitietSach";
+    Layout = "~/Views/Shared/_ClientView.cshtml";
+    }
+<div class="single-product-area">
+    <div class="container">
+        <div class="row">
+            @if(Model==null)
+            {
+                <h2 class="text-center text-danger">Không tồn tại sách</h2>
+            }
+            else
+            { 
+            <div class="col-md-4">
+               @Html.Action("SachlienquanPartial", "Sach", new { @machude=Model.MaChuDe })
+            </div>
+
+            <div class="col-md-8">
+                <div class="product-content-right">
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="product-images">
+                                <div class="product-main-img">
+                                    <img src="@Url.Content("~/Image/"+Model.AnhBia)" alt="">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="product-inner">
+                                <h2 class="product-name">@Model.TenSach</h2>
+                                <div class="product-inner-price">
+                                    Giá: <ins>@String.Format("{0:0,0}", @Model.GiaBan) VNĐ</ins>
+                                </div>
+
+                                <form action="" class="cart">
+                         
+                                    <button class="add_to_cart_button" type="submit">Thêm giỏ hàng</button>
+                                </form>
+
+                                <div class="product-inner-category">
+                                    <p>Chủ đề: <a href="/TheLoai/Sachtheloai?matheloai=@Model.MaChuDe">@Model.ChuDe.TenChuDe</a></p>
+                                </div>
+
+                                <div>
+
+                                    <div>
+                                        <div class="tab-pane fade in active">
+                                            <h2>Giới thiệu sách</h2>
+                                            <p>@Model.MoTa</p>                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+

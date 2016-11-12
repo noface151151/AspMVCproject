@@ -5,3 +5,11 @@ E:\visual 2013\BookShop\Model\bin\Debug\EntityFramework.dll
 E:\visual 2013\BookShop\Model\bin\Debug\EntityFramework.xml
 E:\visual 2013\BookShop\Model\obj\Debug\Model.dll
 E:\visual 2013\BookShop\Model\obj\Debug\Model.pdb
+E:\Project\AspMVCproject\Model\bin\Debug\Model.dll.config
+E:\Project\AspMVCproject\Model\bin\Debug\Model.dll
+E:\Project\AspMVCproject\Model\bin\Debug\Model.pdb
+E:\Project\AspMVCproject\Model\bin\Debug\EntityFramework.dll
+E:\Project\AspMVCproject\Model\bin\Debug\EntityFramework.xml
+E:\Project\AspMVCproject\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+E:\Project\AspMVCproject\Model\obj\Debug\Model.dll
+E:\Project\AspMVCproject\Model\obj\Debug\Model.pdb

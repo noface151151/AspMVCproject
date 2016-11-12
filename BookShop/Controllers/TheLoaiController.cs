@@ -13,31 +13,30 @@ namespace BookShop.Controllers
     {
         // GET: TheLoai
         SachDAL sachDAL = new SachDAL();
-        public ActionResult Sachtheloai(int? page,int matheloai = 0)
+        ChuDeDAL chudeDAL = new ChuDeDAL();
+
+        [HttpGet]
+        public ActionResult Sachtheloai(int? page,int matheloai = 1)
         {
-            int Pagesize = 15;
+            if(chudeDAL.GetbyID(matheloai)==null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            int Pagesize = 9;
             int PageNumber = (page ?? 1);
+
             if (Request.IsAjaxRequest())
             {
-                if (matheloai == 0)
-                {
-                    return PartialView("SachChuDePartial", sachDAL.GetAll().OrderBy(x => x.MaSach).ToPagedList(PageNumber, Pagesize));
-                }
-                else
-                {
+                
                     return PartialView("SachChuDePartial", sachDAL.SachTheLoai(matheloai).OrderBy(x => x.MaSach).ToPagedList(PageNumber, Pagesize));
-                }
+                
             }
             else
             {
-                if (matheloai == 0)
-                {
-                    return View(sachDAL.GetAll().OrderBy(x => x.MaSach).ToPagedList(PageNumber,Pagesize));
-                }
-                else
-                {
+                
                     return View(sachDAL.SachTheLoai(matheloai).OrderBy(x => x.MaSach).ToPagedList(PageNumber, Pagesize));
-                }
+                
             }
         }
     }

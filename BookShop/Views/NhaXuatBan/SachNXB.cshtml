@@ -1,83 +1,85 @@
 ﻿@using Model.EF
-@model List<Sach>
+@using PagedList.Mvc
+@model PagedList.IPagedList<Sach>
 @{
     ViewBag.Title = "SachNXB";
     Layout = "~/Views/Shared/_ClientView.cshtml";
 }
-<div class="col-md-3" style="margin-top:50px;height:80%">
-    @Html.Action("NXBPartial", "HomeClient")
-</div>
+
 
 <div class="single-product-area">
     <div class="container">
-        <div class="row">
-           @{int i = 0;}
-@foreach(var item in Model)
+        <div class="row" id="sachNXB">
+            <div class="col-md-3">
+                <div clas="single-sidebar">
+                    @Html.Action("NXBPartial", "HomeClient")
+                </div>
+            </div>
+            <div class="col-md-9">
+@if (Model.Count == 0)
                 {
-                    i++;
-            <div class="col-md-3 col-sm-6">
-                 
-                <div class="single-product" style="margin-bottom:10px">
-
-
-                    <div class="product-f-image">
-                        <img src="@Url.Content("~/Image/"+item.AnhBia)" alt="">
-                        <div class="product-hover">
-                            <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
-                            <a href="#" class="view-details-link"><i class="fa fa-link"></i> Xem chi tiết</a>
-                        </div>
-                    </div>
-
-                    @if (item.TenSach.Length > 20)
-                    {
-                        string s = @item.TenSach.Substring(0, 20).ToString() + "...";
-                        <h2><a href="#">@s</a></h2>
-                    }
-                    else
-                    {
-                        <h2><a href="#"> @item.TenSach</a></h2>
-
-                    }
-
-                    <div class="product-carousel-price">
-                        Giá: <ins>@String.Format("{0:0,0}", item.GiaBan) VNĐ</ins>
-                    </div>
-
-                </div>
-                
-            </div>
-                    if (i % 3 == 0)
-                    {
-                        <div style="clear:both"></div>
-                    }
+    <h3 class="text-center text-danger"> Không có sách thuộc nhà xuất bản này</h3>
                 }
-        </div>
+                else
+                {
+                foreach (var item in Model)
+                {
+                    
 
-        <div class="row">
-            <div class="col-md-12">
+                    <div class="col-md-4 col-sm-8">
+
+                        <div class="single-product" style="margin-bottom:10px">
+
+
+                            <div class="product-f-image">
+                                <img src="@Url.Content("~/Image/"+item.AnhBia)" alt="">
+                                <div class="product-hover">
+                                    <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+                                    <a href="/Sach/ChitietSach?masach=@item.MaSach" class="view-details-link"><i class="fa fa-link"></i> Xem chi tiết</a>
+                                   
+                                </div>
+                            </div>
+
+                            @if (item.TenSach.Length > 20)
+                            {
+                                string s = @item.TenSach.Substring(0, 20).ToString() + "...";
+                                <h2><a href="#">@s</a></h2>
+                            }
+                            else
+                            {
+                                <h2><a href="#"> @item.TenSach</a></h2>
+
+                            }
+
+                            <div class="product-carousel-price">
+                                Giá: <ins>@String.Format("{0:0,0}", item.GiaBan) VNĐ</ins>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                }
+}
+            </div>
+            <div>
+
                 <div class="product-pagination text-center">
-                    <nav>
-                        <ul class="pagination">
-                            <li>
-                                <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
+                    <ul class="pagination">
+
+                        @for (int x = 1; x <= Model.PageCount; x++)
+                        {
+                            <li class="@(Model.PageNumber == x ? "active" : "")">
+                                @Html.ActionLink(x.ToString(), "SachNXB", new { page = x })
                             </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                        }
+                    </ul>
+
                 </div>
             </div>
         </div>
+
+
     </div>
 </div>
 

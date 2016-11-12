@@ -32,3 +32,37 @@ E:\visual 2013\BookShop\BookShop\bin\PagedList.dll
 E:\visual 2013\BookShop\BookShop\bin\PagedList.Mvc.dll
 E:\visual 2013\BookShop\BookShop\bin\PagedList.xml
 E:\visual 2013\BookShop\BookShop\bin\PagedList.Mvc.xml
+E:\Project\AspMVCproject\BookShop\bin\BookShop.dll.config
+E:\Project\AspMVCproject\BookShop\bin\BookShop.dll
+E:\Project\AspMVCproject\BookShop\bin\BookShop.pdb
+E:\Project\AspMVCproject\BookShop\bin\Antlr3.Runtime.dll
+E:\Project\AspMVCproject\BookShop\bin\Microsoft.Web.Infrastructure.dll
+E:\Project\AspMVCproject\BookShop\bin\Model.dll
+E:\Project\AspMVCproject\BookShop\bin\Newtonsoft.Json.dll
+E:\Project\AspMVCproject\BookShop\bin\PagedList.dll
+E:\Project\AspMVCproject\BookShop\bin\PagedList.Mvc.dll
+E:\Project\AspMVCproject\BookShop\bin\System.Web.Helpers.dll
+E:\Project\AspMVCproject\BookShop\bin\System.Web.Mvc.dll
+E:\Project\AspMVCproject\BookShop\bin\System.Web.Optimization.dll
+E:\Project\AspMVCproject\BookShop\bin\System.Web.Razor.dll
+E:\Project\AspMVCproject\BookShop\bin\System.Web.WebPages.Deployment.dll
+E:\Project\AspMVCproject\BookShop\bin\System.Web.WebPages.dll
+E:\Project\AspMVCproject\BookShop\bin\System.Web.WebPages.Razor.dll
+E:\Project\AspMVCproject\BookShop\bin\WebGrease.dll
+E:\Project\AspMVCproject\BookShop\bin\EntityFramework.dll
+E:\Project\AspMVCproject\BookShop\bin\Model.pdb
+E:\Project\AspMVCproject\BookShop\bin\PagedList.xml
+E:\Project\AspMVCproject\BookShop\bin\PagedList.Mvc.xml
+E:\Project\AspMVCproject\BookShop\bin\System.Web.Helpers.xml
+E:\Project\AspMVCproject\BookShop\bin\System.Web.Mvc.xml
+E:\Project\AspMVCproject\BookShop\bin\System.Web.Optimization.xml
+E:\Project\AspMVCproject\BookShop\bin\System.Web.Razor.xml
+E:\Project\AspMVCproject\BookShop\bin\System.Web.WebPages.xml
+E:\Project\AspMVCproject\BookShop\bin\System.Web.WebPages.Deployment.xml
+E:\Project\AspMVCproject\BookShop\bin\System.Web.WebPages.Razor.xml
+E:\Project\AspMVCproject\BookShop\bin\Antlr3.Runtime.pdb
+E:\Project\AspMVCproject\BookShop\bin\Newtonsoft.Json.xml
+E:\Project\AspMVCproject\BookShop\bin\EntityFramework.xml
+E:\Project\AspMVCproject\BookShop\obj\Debug\BookShop.csprojResolveAssemblyReference.cache
+E:\Project\AspMVCproject\BookShop\obj\Debug\BookShop.dll
+E:\Project\AspMVCproject\BookShop\obj\Debug\BookShop.pdb

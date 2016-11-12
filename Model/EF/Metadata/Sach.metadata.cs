@@ -22,7 +22,7 @@ namespace Model.EF
             public Nullable<int> MaChuDe { get; set; }
 
             [Display(Name = "Tác giả")]
-            [Required(ErrorMessage = "Tên tác giả không được để trống")]
+            
             public string TenTacGia { get; set; }
 
             [Display(Name = "Tên sách")]

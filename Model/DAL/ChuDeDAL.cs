@@ -18,5 +18,9 @@ namespace Model.DAL
          {
              return db.ChuDes.ToList();
          }
+         public ChuDe GetbyID(int machude)
+         {
+             return db.ChuDes.Where(x => x.MaChuDe == machude).SingleOrDefault();
+         }
     }
 }

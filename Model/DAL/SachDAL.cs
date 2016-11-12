@@ -41,6 +41,25 @@ namespace Model.DAL
         {
             return db.Saches.Where(x => x.MaSach == id).SingleOrDefault();
         }
+        public Sach GetBookbyIDView(int id)
+        {
+            var sach = db.Saches.Where(x => x.MaSach == id).SingleOrDefault();
+            if(sach!=null)
+            {
+
+                sach.SoLanXem += 1;
+                db.SaveChanges();
+                return sach;
+            }
+            else
+            {
+                return sach;
+            }
+        }
+        public List<Sach> Sachlienquan(int machude)
+        {
+            return db.Saches.Where(x => x.MaChuDe == machude).Take(5).ToList();
+        }
         public bool UpdateBook(Sach sachupdate,string fileanh)
         {
             Sach sach = new Sach();

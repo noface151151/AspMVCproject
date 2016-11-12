@@ -1,6 +1,6 @@
 ﻿@using Model.EF
 @model List<NhaXuatBan>
-     @*    <ul id="submenu" class="nav navbar-nav">
+@*    <ul id="submenu" class="nav navbar-nav">
         @foreach (var item in Model)
         {
             <li style="list-style:none">
@@ -8,7 +8,8 @@
             </li>
         }
 
-    </ul>*@  
+    </ul>*@
+<h2 class="sidebar-title"> Danh sách Chủ đề</h2>
 <ul class="nav in">
     @foreach (var item in Model)
     {
@@ -18,7 +19,7 @@
     }
 </ul>
 <style>
-    #tenNXB:hover{
-        background-color:#ffd800;
+    #tenNXB:hover {
+        background-color: #ffd800;
     }
 </style>

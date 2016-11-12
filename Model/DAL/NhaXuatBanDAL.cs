@@ -18,5 +18,9 @@ namespace Model.DAL
          {
              return db.NhaXuatBans.ToList();
          }
+       public NhaXuatBan GetbyID(int manxb)
+         {
+             return db.NhaXuatBans.Where(x => x.MaNXB == manxb).SingleOrDefault();
+         }
     }
 }

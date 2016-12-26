@@ -1,0 +1,62 @@
+﻿@using Model.EF
+@model List<Sach>
+@{
+    ViewBag.Title = "Sách bán chạy";
+    Layout = "~/Views/Shared/_ClientView.cshtml";
+}
+
+
+<div class="single-product-area">
+   
+    <div class="container">
+        <h2 class="sidebar-title col-md-4">Sách mua nhiều</h2>
+        <div class="row" id="sachNXB">
+            
+            <div class="col-md-12">
+             
+                
+                    @foreach (var item in Model)
+                    {
+
+
+                        <div class="col-md-3 col-sm-6">
+
+                            <div class="single-product" style="margin-bottom:10px">
+
+
+                                <div class="product-f-image">
+                                    <img src="@Url.Content("~/Image/"+item.AnhBia)" alt="">
+                                    <div class="product-hover">
+                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+                                        <a href="/Sach/ChitietSach?masach=@item.MaSach" class="view-details-link"><i class="fa fa-link"></i> Xem chi tiết</a>
+
+                                    </div>
+                                </div>
+
+                                @if (item.TenSach.Length > 20)
+                                {
+                                    string s = @item.TenSach.Substring(0, 20).ToString() + "...";
+                                    <h2><a href="/Sach/ChitietSach?masach=@item.MaSach">@s</a></h2>
+                                }
+                                else
+                                {
+                                    <h2><a href="/Sach/ChitietSach?masach=@item.MaSach"> @item.TenSach</a></h2>
+
+                                }
+
+                                <div class="product-carousel-price">
+                                    Giá: <ins>@String.Format("{0:0,0}", item.GiaBan) VNĐ</ins>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    }
+                
+            </div>
+        </div>
+
+
+    </div>
+</div>

@@ -15,7 +15,8 @@
     @foreach (var item in Model)
     {
         <li>
-            @Html.ActionLink(item.TenChuDe, "Sachtheloai", "TheLoai", new { @matheloai = item.MaChuDe }, new { @id = "tenNXB" })
+           
+            @Html.RouteLink(item.TenChuDe, "SachChuDe", new { tenchude = @item.TenChuDe, id = @item.MaChuDe }, new { @id = "tenNXB" })
         </li>
     }
 </ul>

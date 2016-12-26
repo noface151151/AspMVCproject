@@ -422,6 +422,8 @@
     <Content Include="Views\TheLoai\SachChuDePartial.cshtml" />
     <Content Include="Views\Sach\ChitietSach.cshtml" />
     <Content Include="Views\Sach\SachlienquanPartial.cshtml" />
+    <Content Include="Views\HomeClient\SachBanChayPartial.cshtml" />
+    <Content Include="Views\Sach\SachBanChay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

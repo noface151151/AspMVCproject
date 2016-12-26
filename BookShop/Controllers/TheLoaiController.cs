@@ -16,9 +16,9 @@ namespace BookShop.Controllers
         ChuDeDAL chudeDAL = new ChuDeDAL();
 
         [HttpGet]
-        public ActionResult Sachtheloai(int? page,int matheloai = 1)
+        public ActionResult Sachtheloai(int? page,int id=1)
         {
-            if(chudeDAL.GetbyID(matheloai)==null)
+            if(chudeDAL.GetbyID(id)==null)
             {
                 Response.StatusCode = 404;
                 return null;
@@ -29,13 +29,13 @@ namespace BookShop.Controllers
             if (Request.IsAjaxRequest())
             {
                 
-                    return PartialView("SachChuDePartial", sachDAL.SachTheLoai(matheloai).OrderBy(x => x.MaSach).ToPagedList(PageNumber, Pagesize));
+                    return PartialView("SachChuDePartial", sachDAL.SachTheLoai(id).OrderBy(x => x.MaSach).ToPagedList(PageNumber, Pagesize));
                 
             }
             else
             {
                 
-                    return View(sachDAL.SachTheLoai(matheloai).OrderBy(x => x.MaSach).ToPagedList(PageNumber, Pagesize));
+                    return View(sachDAL.SachTheLoai(id).OrderBy(x => x.MaSach).ToPagedList(PageNumber, Pagesize));
                 
             }
         }

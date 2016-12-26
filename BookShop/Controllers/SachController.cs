@@ -21,5 +21,9 @@ namespace BookShop.Controllers
         {
             return PartialView(sachDAL.Sachlienquan(machude));
         }
+        public ActionResult SachBanChay()
+        {
+            return View(sachDAL.SachBanChayAll());
+        }
     }
 }

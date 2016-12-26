@@ -41,11 +41,11 @@
                                                 @if (item.TenSach.Length > 20)
                                                 {
                                                     string s = @item.TenSach.Substring(0, 20).ToString() + "...";
-                                                    <h2><a href="#">@s</a></h2>
+                                                    <h2><a href="/Sach/ChitietSach?masach=@item.MaSach">@s</a></h2>
                                                 }
                                                 else
                                                 {
-                                                    <h2><a href="#"> @item.TenSach</a></h2>
+                                                    <h2><a href="/Sach/ChitietSach?masach=@item.MaSach"> @item.TenSach</a></h2>
 
                                                 }
 

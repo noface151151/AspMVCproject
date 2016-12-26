@@ -17,6 +17,14 @@ namespace Model.DAL
         public List<Sach> GetBookKM() {
             return db.Saches.Take(10).ToList();
         }
+        public List<Sach> SachBanChay()
+        {
+            return db.Saches.Where(x => x.SoLanXem != 0).Take(3).OrderByDescending(x=>x.SoLanXem).ToList();
+        }
+        public List<Sach> SachBanChayAll()
+        {
+            return db.Saches.Where(x => x.SoLanXem != 0).OrderByDescending(x => x.SoLanXem).ToList();
+        }
         public List<Sach> GetAll()
         {
             return db.Saches.ToList();

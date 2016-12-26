@@ -30,5 +30,9 @@ namespace BookShop.Controllers
         {
             return PartialView(chudeDAL.GetAll());
         }
+        public ActionResult SachBanChayPartial()
+        {
+            return PartialView(sachDAL.SachBanChay());
+        }
     }
 }

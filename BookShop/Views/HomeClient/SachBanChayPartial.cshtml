@@ -1,0 +1,21 @@
+﻿@using Model.EF
+@model List<Sach>
+           @foreach(var item in Model)
+           { 
+<div class="single-wid-product">
+    <a href="/Sach/ChitietSach?masach=@item.MaSach"><img src="@Url.Content("~/Image/"+item.AnhBia)" alt="" class="product-thumb"></a>
+    @if (item.TenSach.Length > 20)
+    {
+        string s = @item.TenSach.Substring(0, 19).ToString() + "...";
+        <h2><a href="/Sach/ChitietSach?masach=@item.MaSach">@s</a></h2>
+    }
+    else
+    {
+        <h2><a href="/Sach/ChitietSach?masach=@item.MaSach"> @item.TenSach</a></h2>
+
+    }
+    <div class="product-wid-price">
+        <ins>@String.Format("{0:0,0}", item.GiaBan) VNĐ</ins>
+    </div>
+</div>
+           }
